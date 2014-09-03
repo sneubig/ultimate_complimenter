@@ -1,11 +1,12 @@
 require 'twilio-ruby'
+require_relative '../../credentials'
 
 class Notification
   attr_accessor :to_number
 
   def initialize
-    account_sid = "YOUR_ACCOUNT_SID"
-    auth_token = "YOUR_AUTH_TOKEN"
+    account_sid = Credentials.credentials[:twilio_account_sid]
+    auth_token = Credentials.credentials[:twilio_account_token]
     @client = Twilio::REST::Client.new(account_sid, auth_token)
   end
 
