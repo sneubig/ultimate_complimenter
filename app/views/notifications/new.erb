@@ -1,0 +1,7 @@
+<h2> Need a compliment? </h2>
+
+<%= form_tag("/notifications", method: "POST") %>
+	<%= label_tag(:notifications, "Phone Number: ") %>
+	<%= text_field_tag(:to_number) %>
+
+	<%= submit_tag %>
